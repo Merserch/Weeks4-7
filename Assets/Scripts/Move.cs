@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed = 20f;
+    public AnimationCurve speedCurve;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,6 +13,6 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.right * Time.deltaTime * speed;
+       // transform.position += transform.up * Time.deltaTime * speedCurve.Evaluate(speedCurve);
     }
 }
