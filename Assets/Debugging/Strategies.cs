@@ -6,9 +6,15 @@ public class Strategies : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < 10; i++)
+        //set the number of times the loop should happen
+        for (int i = 0; i < 20; i++)
         {
-            Instantiate(prefab, new Vector3 (0, i/10, 0), Quaternion.identity);
+            float x = i;
+            float y = i/10f;
+            float z = 0;
+            Debug.Log("y = " + y);
+            //spawn the individual items at an x position thats increasing by 1 and y by 0.1.
+            Instantiate(prefab, new Vector3 (x, y, z), Quaternion.identity);
         }
     }
 
