@@ -308,9 +308,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordPrefab: {fileID: 2445282565972396446, guid: e164494f3006e284eb071cb4b4e6d427, type: 3}
+<<<<<<< HEAD
   numberOfSwords: 0
   maxNumberOfSwords: 5
   spawnedSword: {fileID: 2445282565972396446, guid: e164494f3006e284eb071cb4b4e6d427, type: 3}
+=======
+  numberOfSwords: 5
+  spawnedSword: {fileID: 0}
+>>>>>>> Week-6-Coding-Gym
   swords: []
 --- !u!1 &911129410
 GameObject:
