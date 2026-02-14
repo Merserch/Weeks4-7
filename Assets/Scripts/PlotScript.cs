@@ -29,7 +29,7 @@ public class PlotScript : MonoBehaviour
             moist = false;
         }
 
-        if(moisture > 500)
+        if(moisture > 1500)
         {
             moisture = 1500;
         }
