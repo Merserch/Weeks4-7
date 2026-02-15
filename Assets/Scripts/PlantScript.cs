@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class PlantScript : MonoBehaviour
@@ -15,6 +16,9 @@ public class PlantScript : MonoBehaviour
     public PlotScript plotScript;
     public List<Sprite> stage;
 
+    //get the timer component in the world UI
+    public GameObject timerHand;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,12 +34,19 @@ public class PlantScript : MonoBehaviour
     void Update()
     {
         //check the moisture of the soil
-        if(plotScript.moisture > 0)
+        if(plotScript.moisture > 0 && currentLifespan < maxLifespan)
         {
             //if it's wet, it may drink and grow
             currentLifespan += 1f * Time.deltaTime;
             drinking = true;
+
+            //set the timer hand to reflect the percentage of time left until fully grown
+            Vector3 handRotation = timerHand.transform.eulerAngles;
+            handRotation.z -= 360 / maxLifespan * Time.deltaTime;
+            timerHand.transform.eulerAngles = handRotation;
         }
+
+        
 
         //if moisture is low, drinking will not change but the lifespan will not increase
 
