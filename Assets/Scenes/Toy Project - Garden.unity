@@ -442,8 +442,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moisture: 0
   moist: 0
+  maxMoisture: 15
+  minMoisture: -5
   drenchingValue: 0
   drenchSlider: {fileID: 868570303}
+  myPlant: {fileID: 982603462}
+  plantScript: {fileID: 0}
 --- !u!212 &656233399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -508,9 +512,9 @@ Transform:
   m_GameObject: {fileID: 656233397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.98, z: 0}
-  m_LocalScale: {x: 2.7, y: 2.7, z: 2.7}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: -3.5, z: 0}
+  m_LocalScale: {x: 3.04, y: 1.9, z: 1.9}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -709,8 +713,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1955480485}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 300
-  m_WholeNumbers: 1
+  m_MaxValue: 3
+  m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -900,7 +904,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8370564717706785224, guid: 89a6b2f537d774dd5bb187176b91879a, type: 3}
+  m_Sprite: {fileID: -6298729718040084355, guid: 39d5398801b974a1c998cb6e6663c8c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -920,8 +924,8 @@ Transform:
   m_GameObject: {fileID: 982603462}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalPosition: {x: 0, y: -1.67, z: 0}
+  m_LocalScale: {x: 11, y: 11, z: 11}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -938,11 +942,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdc55040e18f4d33bd3e7bba47032db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sr: {fileID: 982603463}
   currentLifespan: 0
-  maxLifespan: 1500
+  maxLifespan: 30
   drinking: 1
+  sr: {fileID: 982603463}
   myPlot: {fileID: 656233397}
+  plotScript: {fileID: 0}
+  stage:
+  - {fileID: 7284301979836012771, guid: 1385a311e657c4f6ca398bc277450290, type: 3}
+  - {fileID: -8370564717706785224, guid: 89a6b2f537d774dd5bb187176b91879a, type: 3}
+  - {fileID: -6298729718040084355, guid: 39d5398801b974a1c998cb6e6663c8c5, type: 3}
 --- !u!1 &1122354459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1213,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 401386516}
   - {fileID: 656233400}
+  - {fileID: 982603464}
   - {fileID: 652524888}
   - {fileID: 1122354462}
   - {fileID: 1219033113}
-  - {fileID: 982603464}
