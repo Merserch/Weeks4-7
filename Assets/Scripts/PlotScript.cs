@@ -17,6 +17,7 @@ public class PlotScript : MonoBehaviour
     //the plant object associated with this plot and it's script
     public GameObject myPlant;
     public PlantScript plantScript;
+    public GameObject needWater;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +26,7 @@ public class PlotScript : MonoBehaviour
         moisture = maxMoisture;
         //get the plant object
         plantScript = myPlant.GetComponent<PlantScript>();
+
     }
 
     // Update is called once per frame
@@ -40,10 +42,18 @@ public class PlotScript : MonoBehaviour
             moist = false;
         }
 
-        //while being drunk from, the soil loses moisture
-        if(plantScript.drinking == true)
+        if (myPlant != null)
         {
-            moisture -= 1f * Time.deltaTime;
+            //while being drunk from, the soil loses moisture
+            if(plantScript.drinking == true)
+            {
+                moisture -= 1f * Time.deltaTime;
+                needWater.SetActive(false);
+            }
+            else
+            {
+                needWater.SetActive(true);
+            }
         }
 
         //this is the maximum saturation for the soil, any overflow is discarded
