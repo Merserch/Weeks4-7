@@ -23,6 +23,8 @@ public class PlantScript : MonoBehaviour
     {
         //get the sprite renderer so we can change the sprite
         sr = GetComponent<SpriteRenderer>();
+        //set a random lifespan for some variance
+        maxLifespan = Random.Range(15, 30);
         //set the sprite to the first stage, a little sprout
         sr.sprite = stage[0];
     }

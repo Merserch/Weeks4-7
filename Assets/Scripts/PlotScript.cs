@@ -37,7 +37,7 @@ public class PlotScript : MonoBehaviour
     {
         //set to maximum moisture
         moisture = maxMoisture;
-        spawnPoint = new Vector2(transform.position.x, transform.position.y + 2);
+        spawnPoint = new Vector2(transform.position.x, transform.position.y + 1.8f);
     }
 
     // Update is called once per frame
@@ -48,9 +48,11 @@ public class PlotScript : MonoBehaviour
         if(moisture > minMoisture)
         {
             moist = true;
+            needWater.SetActive(false);
         } else
         {
             moist = false;
+            needWater.SetActive(true);
         }
 
         //things to do while the plant is alive
@@ -61,11 +63,7 @@ public class PlotScript : MonoBehaviour
             if(drinking == true)
             {
                 moisture -= 1f * Time.deltaTime;
-                needWater.SetActive(false);
-            }
-            else
-            {
-                needWater.SetActive(true);
+                
             }
 
             //check the moisture of the soil
@@ -144,7 +142,9 @@ public class PlotScript : MonoBehaviour
 
     public void HarvestPlant()
     {
+        plantScript.currentLifespan = 0;
         Destroy(myPlant);
+
         harvestPlant.SetActive(false);
         spawnPlant.SetActive(true);
     }
